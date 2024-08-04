@@ -130,3 +130,4 @@ C:\Users\m\temp\dotnet\dotnet-webapi-ef\bin\Debug\net8.0\Microsoft.AspNetCore.Js
 C:\Users\m\temp\dotnet\dotnet-webapi-ef\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\m\temp\dotnet\dotnet-webapi-ef\bin\Debug\net8.0\Newtonsoft.Json.dll
 C:\Users\m\temp\dotnet\dotnet-webapi-ef\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
+C:\Users\m\temp\dotnet\dotnet-webapi-ef\obj\Debug\net8.0\dotnet-webapi-ef.sourcelink.json

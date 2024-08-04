@@ -28,6 +28,9 @@ namespace dotnet_webapi_ef.Controllers
             return Ok(trips);
         }
 
+
+
+
         //GET http://localhost:5710/api/trip/{id}
         [HttpGet("{id}")]
         public IActionResult GetById([FromRoute] int id){

@@ -21,6 +21,7 @@
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    <Content Include="tripbooking.db" CopyToPublishDirectory="Always"/>
   </ItemGroup>
 
 </Project>
