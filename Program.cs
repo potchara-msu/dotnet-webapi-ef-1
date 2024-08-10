@@ -22,7 +22,7 @@ app.UsePathBase(new PathString("/tripajm"));
 // if (app.Environment.IsDevelopment())
 // {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(o => o.RoutePrefix = "/tripajm");
 // }
 
 app.UseHttpsRedirection();
