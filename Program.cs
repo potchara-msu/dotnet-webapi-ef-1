@@ -16,17 +16,21 @@ builder.Services.AddControllers().AddNewtonsoftJson(options => {
 
 
 var app = builder.Build();
-// Add Base Path in case of reverse proxy used
-app.UsePathBase(new PathString("/tripajm"));
+
 
 
 // Configure the HTTP request pipeline.
 // if (app.Environment.IsDevelopment())
 // {
 // app.UseSwagger();
-// app.UseRouting();
-var host = "backend.csmsu.net:8008";
+// app.UseSwaggerUI();
+// }
+
+
+// Add Base Path in case of reverse proxy used
 var basePath = "/tripajm";
+app.UsePathBase(new PathString(basePath));
+var host = "backend.csmsu.net:8008";
 app.UseSwagger(c =>
 {
     c.RouteTemplate = "swagger/{documentName}/swagger.json";
@@ -38,7 +42,7 @@ app.UseSwagger(c =>
     });
 });
 app.UseSwaggerUI();
-// }
+
 
 app.UseHttpsRedirection();
 
