@@ -25,7 +25,7 @@ app.UsePathBase(new PathString("/tripajm"));
 // {
 // app.UseSwagger();
 // app.UseRouting();
-var host = "backend.csmsu.net";
+var host = "backend.csmsu.net:8008";
 var basePath = "/tripajm";
 app.UseSwagger(c =>
 {
