@@ -28,16 +28,17 @@ var app = builder.Build();
 
 
 // Add Base Path in case of reverse proxy used
-var basePath = "/tripajm";
-app.UsePathBase(new PathString(basePath));
 var host = "backend.csmsu.net:8008";
+var basePath = "/tripajm";
+
+app.UsePathBase(new PathString(basePath));
 app.UseSwagger(c =>
 {
     c.RouteTemplate = "swagger/{documentName}/swagger.json";
     c.PreSerializeFilters.Add((swaggerDoc, httpReq) =>
     {
         swaggerDoc.Servers = new List<OpenApiServer> { new OpenApiServer { Url = $"{httpReq.Scheme}://{host}{basePath}" } ,
-        new OpenApiServer { Url = $"{httpReq.Scheme}://{httpReq.Host.Value}{basePath}" }
+        new OpenApiServer { Url = $"{httpReq.Scheme}://{httpReq.Host.Value}" }
         };
     });
 });
