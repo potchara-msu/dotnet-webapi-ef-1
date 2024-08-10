@@ -23,7 +23,7 @@ app.UsePathBase(new PathString("/tripajm"));
 // Configure the HTTP request pipeline.
 // if (app.Environment.IsDevelopment())
 // {
-    app.UseSwagger();
+    // app.UseSwagger();
 app.UseRouting();
 var basePath = "/tripajm";
 app.UseSwagger(c =>
@@ -34,6 +34,7 @@ app.UseSwagger(c =>
         swaggerDoc.Servers = new List<OpenApiServer> { new OpenApiServer { Url = $"{httpReq.Scheme}://{httpReq.Host.Value}{basePath}" } };
     });
 });
+app.UseSwaggerUI();
 // }
 
 app.UseHttpsRedirection();
