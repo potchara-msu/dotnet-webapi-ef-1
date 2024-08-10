@@ -24,6 +24,7 @@ app.UsePathBase(new PathString("/tripajm"));
 // if (app.Environment.IsDevelopment())
 // {
     app.UseSwagger();
+app.UseRouting();
 var basePath = "/tripajm";
 app.UseSwagger(c =>
 {
