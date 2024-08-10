@@ -1,4 +1,5 @@
 using dotnet_webapi_ef.Data;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,11 +19,20 @@ var app = builder.Build();
 // Add Base Path in case of reverse proxy used
 app.UsePathBase(new PathString("/tripajm"));
 
+
 // Configure the HTTP request pipeline.
 // if (app.Environment.IsDevelopment())
 // {
     app.UseSwagger();
-    app.UseSwaggerUI(o => o.RoutePrefix = "/tripajm");
+var basePath = "/tripajm";
+app.UseSwagger(c =>
+{
+    c.RouteTemplate = "swagger/{documentName}/swagger.json";
+    c.PreSerializeFilters.Add((swaggerDoc, httpReq) =>
+    {
+        swaggerDoc.Servers = new List<OpenApiServer> { new OpenApiServer { Url = $"{httpReq.Scheme}://{httpReq.Host.Value}{basePath}" } };
+    });
+});
 // }
 
 app.UseHttpsRedirection();
