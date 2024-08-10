@@ -16,7 +16,7 @@ builder.Services.AddControllers().AddNewtonsoftJson(options => {
 
 var app = builder.Build();
 // Add Base Path in case of reverse proxy used
-app.UsePathBase(new PathString("/5501"));
+app.UsePathBase(new PathString("/tripajm"));
 
 // Configure the HTTP request pipeline.
 // if (app.Environment.IsDevelopment())
